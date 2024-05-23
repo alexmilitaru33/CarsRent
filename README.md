@@ -9,9 +9,9 @@ The car rental system is designed to facilitate the management and rental of car
 ## Technologies Used
 - *Node.js*: Server-side JavaScript runtime.
 - *Express.js*: Web application framework for Node.js.
-- *Sequelize*: ORM to interact with databases like MySQL, PostgreSQL, etc.
+- *Sequelize*: ORM to interact with databases like MySQL
 - *Jest*: Testing framework for JavaScript.
-- *SQLite/MySQL/PostgreSQL*: Databases supported.
+- *Databases*: MySQL
 - *Swagger*: API documentation tool.
 
 ## Getting Started
@@ -24,23 +24,25 @@ Before you begin, ensure you have the following installed:
 
 
 ## Installation
-
+```
 bash
 git clone [https://github.com/alexmilitaru33/CarsRent]
 cd car-renting-system
 npm install
+```
 
 
 ## Configuration
 
 ### Environment
 Create a .env file in the root directory of the project. This file should contain the following environment variables:
-
-DB_NAME=nodeapp
-DB_USER=root
-DB_PASS=ciscosecpa55
-DB_HOST=localhost
-JWT_SECRET=9d9e12ca3dc5c0dba13ed2f5121d91bb9d9063a36b3e2b7c58fdc742bb999599
+```
+DB_NAME
+DB_USER
+DB_PASS
+DB_HOST
+JWT_SECRET
+```
 
 
 These variables are used to configure the database connection and JWT authentication:
@@ -57,7 +59,7 @@ JWT_SECRET: A secret key for signing JSON Web Tokens (JWT).
 
 
 ### Database Configuration
-
+```
 require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
@@ -81,7 +83,7 @@ sequelize.authenticate()
   });
 
 module.exports = sequelize;
-
+```
 
 
 
@@ -89,18 +91,19 @@ module.exports = sequelize;
 - User authentication
 - Car browsing by Name
 - Renting and returning cars
+- List all the car order by prices for everyone
   
 
 ## Workflow
 Below are the workflow diagrams illustrating the user authentication and car renting processes:
 
 ### Book Lending Workflow
-![Car Renting Workflow](./images/workflow.jpg)
+![Car Renting Workflow](./doc/FlowChartRentCar.png)
 
 ## Database Schema
 The following diagram illustrates the database schema used in the Car Renting System:
 
-![Database Schema](./images/db.png)
+![Database Schema](./doc/Diagrama_CarsRent.png)
 
 ## Swagger
 To explain better the endpoints of the application I used Swagger. In order to setup this tool, we have to follow the following steps:
@@ -130,9 +133,9 @@ const swaggerDefinition = {
   module.exports = swaggerSpec;
 
 
-![Endpoints](./images/sw1.png)
-![Endpoints](./images/sw2.png)
-![Endpoints](./images/sw3.png)
+![Endpoints](./doc/sw1.png)
+![Endpoints](./doc/sw2.png)
+
 
 
 ## Testing
@@ -140,16 +143,19 @@ In order to test the applicaction, I used Jest.
 
 ### Instalation
 
+```
 npm install --save-dev jest supertest
+```
 
 
 ### Dependencies
 In application.json, in the root of the project, there is necessar to add the following syntax:
-
+```
 "scripts": {
     "test": "jest"
   }
-
+```
 ## Run tests
-
+```
 npm test
+```
