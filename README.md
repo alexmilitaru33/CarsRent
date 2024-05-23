@@ -109,10 +109,12 @@ The following diagram illustrates the database schema used in the Car Renting Sy
 To explain better the endpoints of the application I used Swagger. In order to setup this tool, we have to follow the following steps:
 
 ### Instalation
+```
 npm install swagger-ui-express swagger-jsdoc
-
+```
 
 ### Configuration
+```
 const swaggerJSDoc = require('swagger-jsdoc');
 
 const swaggerDefinition = {
@@ -131,7 +133,7 @@ const swaggerDefinition = {
   
   const swaggerSpec = swaggerJSDoc(options);
   module.exports = swaggerSpec;
-
+```
 
 ![Endpoints](./doc/sw1.png)
 ![Endpoints](./doc/sw2.png)
